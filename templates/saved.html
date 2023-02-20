@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Saved color scheme
+{% endblock %}
+
+{% block main %}
+    <h2 class="my-3" >Your saved color schemes:</h2>
+    <div class="container-fluid">
+        <div class="row row-cols-1 row-cols-md-4 justify-content-center">
+            {%for color in colors%}
+            <div class="col-3 mb-4">
+                
+                <div class="card h-auto">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm" style="background-color: {{ color['1'] }}; height: 200px;"></div>
+                            <div class="col-sm" style="background-color: {{ color['2'] }}; height: 200px; "></div>
+                            <div class="col-sm" style="background-color: {{ color['3'] }}; height: 200px;"></div>
+                            <div class="col-sm" style="background-color: {{ color['4'] }}; height: 200px;"></div>
+                            <div class="col-sm" style="background-color: {{ color['5'] }}; height: 200px;"></div>
+                        </div>
+                    </div>
+
+                    <div class="card-body">
+                        <h5 class="card-title">{{ color["name"] }}</h5>
+                        <form action="/saved" method="post">
+                            <input type="hidden" class="form-control" name="name" type="text" value="{{ color['name'] }}">
+                            <button type="submit" class="btn btn-primary" name="preview">Preview</button>
+                        </form>
+                        
+                        <form action="/saved" method="post">
+                            <input type="hidden" class="form-control" name="name" type="text" value="{{ color['name'] }}">
+                            <button type="submit" class="btn btn-danger" name="delete">Delete</button>
+                        </form>
+                    </div>
+                    
+                </div>
+                
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div style="height: 100px;"></div>
+{% endblock %}

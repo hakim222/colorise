@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    homepage
+{% endblock %}
+
+{% block main %}
+<div class="container-fluid">
+    <div class="row">
+        {% for colo in color %}
+        <div class="col-sm" style="background-color: {{ colo }}; height: 300px;"></div>
+        {% endfor %}
+    </div>
+    <div class="row p-3 bg-light">
+        {% for colo in color %}
+        <div class="col-sm">{{ colo }}</div>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="container-fluid py-3">
+    <button class="btn btn-success btn-lg px-5" onClick="window.location.href='/home';">Generate</button>
+</div>
+
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <form action="/home" method="post" class="form-inline">
+            <div class="form-group mx-sm-3 mb-2">
+                <input autocomplete="off" autofocus class="form-control" name="scheme_name" placeholder="Color Scheme Name" type="text">
+            </div>
+            <button type="submit" class="btn btn-primary mb-2" name="save" value="{{ color }}">Save</button>
+        </form>
+    </div>
+</div>
+
+
+
+{% endblock %}

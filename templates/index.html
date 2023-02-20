@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Colorise
+{% endblock %}
+
+{% block main %}
+    <div class="jumbotron jumbotron-fluid jumbotron-image">
+        <div class="container text-left text-light size">
+            <h1 class="display-4">Welcome to Colorise!</h1>
+            <p class="lead">Web application that generate random color scheme.<br> You can save your favourite color schemes in your account and access it anytime you want.</p>
+            <hr class="my-4 bg-light">
+            <p>Get started by register your new account. Log in if you already have an account</p>
+            <a class="btn btn-warning btn-lg" href="/register" role="button">Register</a>
+            <a class="btn btn-secondary btn-lg" href="/login" role="button">Log In</a>
+        </div>  
+    </div>
+{% endblock %}

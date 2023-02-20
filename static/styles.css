@@ -1,0 +1,59 @@
+nav .navbar-brand
+{
+    /* size for brand */
+    font-size: xx-large;
+    
+}
+
+.navbar-custom
+{
+    background-color: #1C2326;
+}
+
+.size
+{
+    height: 480px;
+}
+
+.size1
+{
+    height: 600px;
+}
+
+.size2
+{
+    padding-top: 30px;
+}
+
+.jumbotron-image 
+{
+    background-image: url("/static/j2.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+main .form-control
+{
+    /* center form controls */
+    display: inline-block;
+
+    /* override Bootstrap's 100% width for form controls */
+    width: 300px;
+}
+
+main
+{
+    /* scroll horizontally as needed */
+    overflow-x: auto;
+
+    /* center contents */
+    text-align: center;
+}
+
+main img
+{
+    /* constrain images on small screens */
+    max-width: 100%;
+}
+
+
